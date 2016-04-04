@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="OneDPeakFindingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_2DPeakFindingTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PeakFinding\PeakFinding.csproj">
