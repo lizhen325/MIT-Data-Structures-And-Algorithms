@@ -13,5 +13,5 @@ if(arr[length]) < arr[length - 1])
 else if(arr[length] < arr[length + 1])
   only look at right half to look for a peak
 else
-  length/2 is a peak
+  arr[length / 2] is a peak
 ```
