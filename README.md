@@ -10,7 +10,7 @@ look at n/2 position
 length = n/2;
 if(arr[length]) < arr[length - 1])
   only look at left half to look for a peak
-else if(arr[length] < arr[length - 1])
+else if(arr[length] < arr[length + 1])
   only look at right half to look for a peak
 else
   length/2 is a peak
