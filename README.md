@@ -25,3 +25,17 @@ else
 <code>
 arccos(D1 * D2 / sqrt(D1 * D1) * sqrt(D2 * D2))
 </code>
+
+##[Charpter 3 InsertionSort & Merge Sort](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/InsertionSortAndMergeSort)
+
+###InsertionSort Algoritm: O(n<sup>2</sup>) complexity
+>For 1-> n insert arr[i] into sorted array arr[0 -> i-1] by pairwise swaps down to the correct position
+>**pseudocode**
+```
+for i=1 to leanth arr
+  for j=1 to j > 0
+    if arr[j-1] > arr[j]
+      swap arr[j] and arr[j-1]
+  end for
+end for
+```
