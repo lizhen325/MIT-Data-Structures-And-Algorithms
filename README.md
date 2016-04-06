@@ -120,7 +120,11 @@ HeapSort(A)
 2. Search: Simiar to Insertion
 3. Find Max : Keep going right untill the node has no children
 4. Find Min : Keep going left untill the node has no children
-5. Delete Node
+5. Delete Node :
+  1. the node has no children
+  2. the node only has left node
+  3. the node only has right node
+  4. the node has two children node
 6. Count height of tree : take the maximum of left height and right height + 1
 7. Traversal: (Pre-Order, In-Order, Post-Order)
 
@@ -140,6 +144,46 @@ Insert(item)
       left child.Insert(item)
   else if item equel to data
       Error:
+```
+Delete Node
+```
+Delete(data,Node)
+  need two node: one for parent, the other for child
+  Node parent;
+  Node current;
+  While(true)
+    if data greater than node.data
+      if current <- null
+        break;
+      parent <- current
+      current <- current.right
+    else if data smaller than node.data
+      if current <- null
+        break;
+      parent <- current
+      parent <- current.left
+  end while
+  
+  the node has no children
+  if left and right are eqaul to null
+    if current <- tree and left <- null and right <- null
+      node <- null
+    else if current data samller than parent data
+      left child <- null
+    else
+      right child <- null
+    
+  the node has left child
+  else if left != null and right = null
+    if current data smaller than parent data
+      parent left child point to current left child
+    else
+      parent right child point to current right cild
+  
+  the node has right child is really similar to the node has left child
+  
+  the node has two children
+  
 ```
 Search Data
 ```
