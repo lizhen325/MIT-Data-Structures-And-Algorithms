@@ -176,14 +176,6 @@ Delete(data,Node)
       parent left child point to current left child
     else
       parent right child point to current right cild
-  
-  when the node has right child is really similar to the node has left child
-  
-  when the node has two children
-    find the delete node is left child or right child
-    if right child parent point to current node
-    else if left child parent 
-  
 ```
 Search Data
 ```
