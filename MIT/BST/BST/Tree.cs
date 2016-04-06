@@ -111,6 +111,7 @@ namespace BST
         {
             Tree parent = tree;
             Tree current = tree;
+            //Find parent node and chilren node
             while(true)
             {
                 if (data < current.data)
@@ -130,9 +131,10 @@ namespace BST
                 else
                     break;
             }
+
+            //the delete node has no children
             if (current.l == null && current.r == null)
             {
-                //如果被删节点是根节点，且没有左右孩子
                 if (current == tree && tree.l == null && tree.r == null)
                 {
                     tree = null;
@@ -142,6 +144,7 @@ namespace BST
                 else
                     parent.r = null;
             }
+            //the delete node has left child
             else if (current.l != null && current.r == null)
             {
                 if (current.data < parent.data)
@@ -149,6 +152,7 @@ namespace BST
                 else
                     parent.r = current.l;
             }
+            //the delete node has right node
             else if (current.l == null && current.r != null)
             {
                 if (current.data < parent.data)
@@ -156,16 +160,16 @@ namespace BST
                 else
                     parent.r = current.r;
             }
+            //the delete node has two children
             else
             {
                 Tree temp;
-                //先判断是父节点的左孩子还是右孩子
+                //find the node is left child or right child
                 if (current.data < parent.data)
                 {
 
                     parent.l = current.l;
                     temp = current.l;
-                    //寻找被删除节点最深的右孩子
                     while (temp.r != null)
                     {
                         temp = temp.r;
@@ -174,19 +178,18 @@ namespace BST
 
 
                 }
-                //右孩子
+                //right child
                 else if (current.data > parent.data)
                 {
                     parent.r = current.r;
                     temp = current.l;
-                    //寻找被删除节点最深的左孩子
                     while (temp.l != null)
                     {
                         temp = temp.l;
                     }
                     temp.r = current.r;
                 }
-                //当被删节点是根节点，并且有两个孩子时
+                //left child
                 else
                 {
                     temp = current.l;
