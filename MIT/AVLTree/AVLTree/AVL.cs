@@ -129,6 +129,60 @@ namespace AVLTree
             return false;
         }
 
+        private Node Delete(Node current, int data)
+        {
+            Node parent;
+            if (current == null) return null;
+            else
+            {
+                //left subtree
+                if(data < current.Data)
+                {
+                    current.left = Delete(current.left, data);
+                    if(BalanceFactor(current) < - 1)
+                    {
+                        if (BalanceFactor(current.left) > 0)
+                            current = RotateRL(current);
+                        else
+                            current = RotateRR(current);
+                    }
+                }
+                //right subtree
+                else if(data > current.Data)
+                {
+                    current.right = Delete(current.right, data);
+                    if(BalanceFactor(current) > 1)
+                    {
+                        if (BalanceFactor(current) > 0)
+                            current = RotateLR(current);
+                        else
+                            current = RotateLL(current);
+                    }
+                }
+                else //the data is found
+                {
+                    if (current.right != null)
+                    {
+                        parent = current.right;
+                        while (parent.left != null)
+                            parent = parent.left;
+                        current.Data = parent.Data;
+                        current.right = Delete(current.right, parent.Data);
+                        if (BalanceFactor(current) > 1)
+                        {
+                            if (BalanceFactor(current.left) > 0)
+                                current = RotateLR(current);
+                            else
+                                current = RotateLL(current);
+                        }
+                        else
+                            return current.left;
+                    }
+                }
+                return current;
+            }
+        }
+
         public void Search(int key)
         {
             if (SearchNode(key, root))
