@@ -110,3 +110,79 @@ HeapSort(A)
     MaxHeapify(A,0,i-1)
   end for
 ```
+
+###[Charpter 5 Binary Search Tree](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/BST)
+
+>The tree additionally satisfies the binary search tree property, which states that the key in each node must be greater than all keys stored in the left sub-tree, and smaller than all keys in right sub-tree.
+
+>##Operations
+1. Insertion : If the insert data greater than the data of the current node move to the right child else move to left child
+2. Search: Simiar to Insertion
+3. Find Max : Keep going right untill the node has no children
+4. Find Min : Keep going left untill the node has no children
+5. Delete Node
+6. Count height of tree : take the maximum of left height and right height + 1
+7. Traversal: (Pre-Order, In-Order, Post-Order)
+
+>##pseudocode
+Insertion Data
+```
+Insert(item)
+  if item greater than data
+    if right child <- null
+      right child <- new node(item,null,null)
+    else
+      right child.Insert(item)
+  else if item samller than data
+    if left child <- null
+      left child <- new node (item,null,null)
+    else
+      left child.Insert(item)
+  else if item equel to data
+      Error:
+```
+Search Data
+```
+ Search(item, Node node)
+  if node.data eqaul to item
+    Found
+  else if node.data greater than item
+    goes left
+  else if node.data smaller than item
+    goes right
+```
+Find minimum data
+```
+  FindMin(Node node)
+    while node != null
+      node goes left
+    return node.data
+```
+Count Height of tree
+```
+  Height(Node node)
+    leftHeight <- Height(node.left)
+    rightHeight <- Height(node.right)
+    Max(leftHeight,rightHeight) + 1
+```
+Pre-Order
+```
+  PreOrder(Node node)
+    print node.data
+    PreOrder(node.left)
+    PreOrder(node.right)
+```
+In-Order
+```
+  InOrder(Node node)
+    InOrder(node.left);
+    print node.data
+    InOrder(node.right)
+```
+Post-Order
+```
+  PostOrder(Node node)
+    PostOrder(node.left)
+    PostOrder(node.right)
+    print node.data
+```
