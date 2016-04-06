@@ -23,6 +23,9 @@ namespace BST
             Console.WriteLine("Max: {0}", Tree.FindMax(tree));
             Console.WriteLine(Tree.Search(3, tree));
             Console.Write("Height: {0}", Tree.Height(tree));
+            Console.WriteLine();
+            tree.Delete(3, tree);
+            Tree.Inorder(tree);
             Console.ReadKey();
         }
     }

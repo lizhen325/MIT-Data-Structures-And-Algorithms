@@ -8,9 +8,9 @@ namespace BST
 {
     public class Tree
     {
-        private int data;
-        private Tree l;
-        private Tree r;
+        public int data;
+        public Tree l;
+        public Tree r;
 
         public Tree() { }
         public Tree(int item, Tree left, Tree right)
@@ -105,6 +105,100 @@ namespace BST
                 else
                     return rHeight + 1;
             }
+        }
+
+        public Tree Delete(int data, Tree tree)
+        {
+            Tree parent = tree;
+            Tree current = tree;
+            while(true)
+            {
+                if (data < current.data)
+                {
+                    if (current == null)
+                        break;
+                    parent = current;
+                    current = current.l;
+                }
+                else if (data > current.data)
+                {
+                    if (current == null)
+                        break;
+                    parent = current;
+                    current = current.r;
+                }
+                else
+                    break;
+            }
+            if (current.l == null && current.r == null)
+            {
+                //如果被删节点是根节点，且没有左右孩子
+                if (current == tree && tree.l == null && tree.r == null)
+                {
+                    tree = null;
+                }
+                else if (current.data < parent.data)
+                    parent.l = null;
+                else
+                    parent.r = null;
+            }
+            else if (current.l != null && current.r == null)
+            {
+                if (current.data < parent.data)
+                    parent.l = current.l;
+                else
+                    parent.r = current.l;
+            }
+            else if (current.l == null && current.r != null)
+            {
+                if (current.data < parent.data)
+                    parent.l = current.r;
+                else
+                    parent.r = current.r;
+            }
+            else
+            {
+                Tree temp;
+                //先判断是父节点的左孩子还是右孩子
+                if (current.data < parent.data)
+                {
+
+                    parent.l = current.l;
+                    temp = current.l;
+                    //寻找被删除节点最深的右孩子
+                    while (temp.r != null)
+                    {
+                        temp = temp.r;
+                    }
+                    temp.r = current.r;
+
+
+                }
+                //右孩子
+                else if (current.data > parent.data)
+                {
+                    parent.r = current.r;
+                    temp = current.l;
+                    //寻找被删除节点最深的左孩子
+                    while (temp.l != null)
+                    {
+                        temp = temp.l;
+                    }
+                    temp.r = current.r;
+                }
+                //当被删节点是根节点，并且有两个孩子时
+                else
+                {
+                    temp = current.l;
+                    while (temp.r != null)
+                    {
+                        temp = temp.r;
+                    }
+                    temp.r = tree.r;
+                    tree = current.l;
+                }
+            }
+            return current;
         }
     }
 }
