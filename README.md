@@ -190,3 +190,34 @@ Post-Order
     PostOrder(node.right)
     print node.data
 ```
+
+###[Charpter 6 AVL Tree](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/AVLTree)
+
+##Definition
+AVL Tree: Require heights of left and right children of every node to differ by at most +- 1.
+
+##Algorithms
+1. Get the height difference from both sides of the tree, using recursion and the difference in balance is the height of the left side minus height of the right side
+2. If the balance is greater 1 or less than -1, rotations must occur to balance the tree, if the balance is -1, 0, or 1, then no rotations are needed.
+3. Nodes in the AVL Tree also store their height, for example, nodes at the top are higher than nodes at the bottom therefore the root would store the highest height while leaf nodes at the bottom would store a height of 1
+
+##Operations
+There are four cases rotations: Left-Left(LL), Right-Right(RR), Left-Right(LR), Right-Left(RL)
+>####Insert()
+after inserting a new node using normal procedure (BST), its necessary to check each of the nodes ancestors for an unbalance in the tree, therefore calling the Balance() method, basically, insert and then a small fix. 
+
+>####Search(): 
+Searching is more optimized since things are more balanced, therefore normal implementation(BST) in this function is sufficient.
+
+>####Delete()
+Just like Insert(), after Deletion occurs we have to call Balance() to check each of the nodes for any unbalance in the tree, we have a public Delete() and a private recursive Delete() that does the actual work.
+
+>####GetHeight()
+Max(leftHeight,rightHeight) + 1
+
+>####BalanceFactor()
+lefthHeight - righHeight
+
+>####BalanceTree()
+1. If balance factor is greater than 1, we first check if we have a left-left case, if we do then we perform that rotation, else, we perform a left-right rotation.
+2. If balance factor is < -1, we first check if we have a right-right case, if we do then we perform a right right rotation, else, we perform a right-left rotation
