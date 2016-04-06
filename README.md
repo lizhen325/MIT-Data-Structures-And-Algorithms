@@ -145,6 +145,46 @@ Insert(item)
   else if item equel to data
       Error:
 ```
+Delete Node
+```
+Delete(data,Node)
+  Node parent;
+  Node current;
+  While(true)
+    if data greater than node.data
+      if current <- null
+        break;
+      parent <- current
+      current <- current.right
+    else if data smaller than node.data
+      if current <- null
+        break;
+      parent <- current
+      parent <- current.left
+  end while
+  
+  if left and right are eqaul to null
+    if current <- tree and left <- null and right <- null
+      node <- null
+    else if current data samller than parent data
+      left child <- null
+    else
+      right child <- null
+
+  else if left != null and right = null
+    if current data smaller than parent data
+      parent left child point to current left child
+    else
+      parent right child point to current right cild
+  
+  when the node has right child is really similar to the node has left child
+  
+  when the node has two children
+    find the delete node is left child or right child
+    if right child parent point to current node
+    else if left child parent 
+  
+```
 Search Data
 ```
  Search(item, Node node)
