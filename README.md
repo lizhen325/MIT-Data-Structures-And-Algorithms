@@ -222,7 +222,7 @@ lefthHeight - righHeight
 1. If balance factor is greater than 1, we first check if we have a left-left case, if we do then we perform that rotation, else, we perform a left-right rotation.
 2. If balance factor is < -1, we first check if we have a right-right case, if we do then we perform a right right rotation, else, we perform a right-left rotation
 
-###[Charpter 7 Counting Sort && Radix Sort](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/CountringSortAndRadixSort)
+###[Charpter 7 Counting Sort](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/CountringSortAndRadixSort)
 
 ###Counting Sort
 ####Algorithm: Sorting non negative integer with linear time complexity
