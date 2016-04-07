@@ -221,3 +221,20 @@ lefthHeight - righHeight
 >####BalanceTree()
 1. If balance factor is greater than 1, we first check if we have a left-left case, if we do then we perform that rotation, else, we perform a left-right rotation.
 2. If balance factor is < -1, we first check if we have a right-right case, if we do then we perform a right right rotation, else, we perform a right-left rotation
+
+###[Charpter 7 Counting Sort && Radix Sort](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/CountringSortAndRadixSort)
+
+####Counting Sort
+#####Algorithm
+1. get the range of array for new length of array
+2. frequencies of the elements of array in new array
+3. number of elements less than or equal to element of array
+4. Sorting
+
+>##Pesudocode
+```
+CountingSort(A)
+   range <- maximum element of array - minimum element of array + 1
+   int[] contains = new int[range];
+   for i <- 0 to length of A
+```
