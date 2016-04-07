@@ -27,8 +27,8 @@ namespace RobinKarp
                         return;
                     }
                 }
-                Console.WriteLine("not found");
             }
+            Console.WriteLine("not found");
         }
     }
 }

@@ -11,8 +11,14 @@ namespace RobinKarp
         static void Main(string[] args)
         {
             string words = "she shell me";
-            string pattern = "shele";
+            string pattern = "a";
             BruteForce.FindWord(words, pattern);
+
+
+            string source = "ILoveE";
+            string subString = "eE";
+            int res = KMP.KMPSearch(source, subString);
+            Console.Write(res);
             Console.ReadKey();
         }
     }
