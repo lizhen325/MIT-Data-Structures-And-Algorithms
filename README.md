@@ -245,3 +245,59 @@ CountingSort(A)
        R[C[A[i]] - 1] = A[i]
        C[A[i]] = C[A[i]] - 1 
 ```
+
+##[Charpter 8 String Match](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/RobinKarp/RobinKarp)
+
+###Brute Force 
+>The brute force algorithm consists in checking, at all positions in the text between 0 and n-m, whether an occurrence of the pattern starts there or not. Then, after each attempt, it shifts the pattern by exactly one position to the right. The search time complexity is O(m*n)
+
+>##Pesudocode
+```
+BruteForce(T,P)
+  n <- length(T)
+  m <- length(P)
+  if n greater or eqaul to m
+    for i=0 to n-m
+      j <- 0
+      while j < m && P[j] == T[i+j]
+        j++
+      end while
+      if j equal to m
+        Found
+      end if
+    end for
+  end if
+```
+
+###KMP
+>KMP discovered first linear time string-matching algorithm by following a tight analysis of the naïve algorithm. KMP algorithm keeps the information that naive approach wasted gathered during the scan of the text. Seraching complexity is O(m+n)
+>##Pesudocode
+```
+Navie(P,int[] next)
+  i <- 0
+  j <- -1
+  next[0] <- -1
+  while i < length(T) - 1
+    if j== -1 || P[i] == P[j]
+      i++;
+      j++;
+      next[i] = j;
+    else
+      j = next[j]
+  end while
+  
+  KMP(T,P)
+  int[] next = new int [lengt(P)]
+  Navie(P,next)
+  i <- 0, j <- 0
+  while i < length(T) && j < length(P)
+    if j == -1 || T[i] == P[j]
+      i++
+      j++
+    else
+      j = next[j]
+    if j == length(p)
+      Found
+  end while
+```
+
