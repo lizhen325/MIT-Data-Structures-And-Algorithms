@@ -19,6 +19,8 @@ namespace RobinKarp
             string subString = "eE";
             int res = KMP.KMPSearch(source, subString);
             Console.Write(res);
+            Console.WriteLine();
+            RobinCarpAlgorithm.RabinKarp(source, subString);
             Console.ReadKey();
         }
     }
