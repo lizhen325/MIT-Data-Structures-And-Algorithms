@@ -285,7 +285,8 @@ Navie(P,int[] next)
     else
       j = next[j]
   end while
-  
+```
+```
   KMP(T,P)
   int[] next = new int [lengt(P)]
   Navie(P,next)
