@@ -8,7 +8,7 @@ namespace BreathFirstSearch
 {
     public class AdjacencyList
     {
-        List<Vertex> items;
+        public List<Vertex> items;
         public AdjacencyList(int capacity)
         {
             items = new List<Vertex>(capacity);

@@ -22,6 +22,7 @@ namespace BreathFirstSearch
             adj.AddEdge('B', 'D');
             adj.AddEdge('B', 'C');
             Console.WriteLine(adj.Display());
+            BFS.BFSTraversal(adj.items[0]);
             Console.ReadKey();
         }
     }
