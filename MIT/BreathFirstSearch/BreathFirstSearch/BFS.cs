@@ -14,12 +14,12 @@ namespace BreathFirstSearch
             queue.Enqueue(v);
             Console.Write(v.Data + " ");
             v.visited = true;
-            while(queue.Count != 0)
+            while (queue.Count != 0)
             {
                 Node node = queue.Dequeue().firstEdge;
-                while(node != null)
+                while (node != null)
                 {
-                    if(node.adjvex.visited == false)
+                    if (node.adjvex.visited == false)
                     {
                         Console.Write(node.adjvex.Data + " ");
                         node.adjvex.visited = true;

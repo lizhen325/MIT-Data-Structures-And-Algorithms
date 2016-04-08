@@ -106,5 +106,12 @@ namespace BreathFirstSearch
             }
             return s;
         }
+        public void InitVist()
+        {
+            foreach(Vertex v in items)
+            {
+                v.visited = false;
+            }
+        }
     }
 }
