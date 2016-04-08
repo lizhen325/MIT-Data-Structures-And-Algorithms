@@ -302,3 +302,39 @@ Navie(P,int[] next)
   end while
 ```
 
+##[Charpter 9 Graph Representation: BFS & DFS](https://github.com/lizhen325/MIT-Data-Structures-And-Algorithms/tree/master/MIT/BreathFirstSearch)
+
+>###Adjency List
+An adjacency list representation for a graph associates each vertex in the graph with the collection of its neighboring vertices or edges. There are many variations of this basic idea, differing in the details of how they implement the association between vertices and collections, in how they implement the collections, in whether they include both vertices and edges or only vertices as first class objects, and in what kinds of objects are used to represent the vertices and edges
+>###Graph Traversal BFS & DFS
+>
+>##Pesudocode
+
+```
+1 procedure BFS(G, v):
+2     create a queue Q
+3     enqueue v onto Q
+4     mark v
+5     while Q is not empty:
+6         t ← Q.dequeue()
+7         if t is what we are looking for:
+8             return t
+9         for all edges e in G.adjacentEdges(t) do
+12            o ← G.adjacentVertex(t, e)
+13            if o is not marked:
+14                mark o
+15                enqueue o onto Q
+```
+
+```
+1 procedure DFS(G, v):
+2     label v as explored
+3     for all edges e in G.incidentEdges(v) do
+4         if edge e is unexplored then
+5             w ← G.adjacentVertex(v, e)
+6             if vertex w is unexplored then
+7                 label e as a discovered edge
+8                 recursively call DFS(G, w)
+9             else
+10               label e as a back edge
+```
